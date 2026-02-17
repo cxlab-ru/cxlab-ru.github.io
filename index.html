@@ -64,6 +64,9 @@
     background: linear-gradient(135deg, transparent 0%, rgba(200,169,110,0.04) 100%);
     border-left: 1px solid rgba(200,169,110,0.1);
   }
+  @media (max-width: 900px) {
+    .hero::before { display: none; }
+  }
   .hero-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 60px; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;
@@ -370,14 +373,80 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 16px 20px; }
     .nav-links { display: none; }
-    section, .hero { padding: 80px 24px; }
-    .hero-grid, .about-grid, .contacts-inner { grid-template-columns: 1fr; gap: 48px; }
-    .services-grid, .expertise-grid { grid-template-columns: 1fr; }
+    
+    section { padding: 60px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    
+    /* Hero - одна колонка */
+    .hero-grid { 
+      grid-template-columns: 1fr; 
+      gap: 40px; 
+    }
+    .hero h1 { 
+      font-size: clamp(1.8rem, 7vw, 2.4rem);
+      max-width: 100%;
+    }
+    .hero-sub { max-width: 100%; font-size: 0.95rem; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
     .hero-stats { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 2rem; }
+    
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; }
+    
+    /* About - одна колонка, фото сверху */
+    .about-grid { 
+      grid-template-columns: 1fr; 
+      gap: 40px; 
+    }
+    .about-left { 
+      position: static; 
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .about-photo { 
+      max-width: 200px; 
+      margin-bottom: 20px;
+    }
+    .companies { width: 100%; }
+    .company-name { font-size: 0.82rem; }
+    
+    /* About text */
+    .about-text { width: 100%; }
     .strengths { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 8px; text-align: center; }
+    
+    /* Expertise */
+    .expertise-grid { grid-template-columns: 1fr; }
+    
+    /* Contacts */
+    .contacts-inner { 
+      grid-template-columns: 1fr; 
+      gap: 40px; 
+    }
+    
+    /* Metrics panel */
+    .metric-value { font-size: 1.1rem; }
+    .metric-name { font-size: 0.8rem; }
+    .metric-row { gap: 8px; }
+    
+    /* Footer */
+    footer { 
+      flex-direction: column; 
+      gap: 8px; 
+      text-align: center; 
+      padding: 24px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 { font-size: clamp(1.6rem, 8vw, 2rem); }
+    .stat-num { font-size: 1.6rem; }
+    .stat-label { font-size: 0.65rem; }
+    .section-title { font-size: 1.6rem; }
   }
 </style>
 </head>
@@ -627,8 +696,8 @@
           <span class="metric-value">+15%</span>
         </div>
         <div class="metric-row">
-          <span class="metric-name">Retention Rate (ACCA)</span>
-          <span class="metric-value">+7% к плану</span>
+          <span class="metric-name">Retention Rate (ACCA, +7% к плану)</span>
+          <span class="metric-value">+7%</span>
         </div>
         <div class="metric-row">
           <span class="metric-name">Service Level (ACCA)</span>
