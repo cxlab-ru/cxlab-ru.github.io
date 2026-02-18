@@ -384,6 +384,12 @@
       grid-template-columns: 1fr; 
       gap: 40px; 
     }
+    .hero-tag { 
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .hero h1 { 
       font-size: clamp(1.8rem, 7vw, 2.4rem);
       max-width: 100%;
@@ -445,7 +451,7 @@
   @media (max-width: 480px) {
     .hero h1 { font-size: clamp(1.6rem, 8vw, 2rem); }
     .stat-num { font-size: 1.6rem; }
-    .stat-label { font-size: 0.65rem; }
+    .stat-label { font-size: 0.65rem; line-height: 1.2; }
     .section-title { font-size: 1.6rem; }
   }
 </style>
@@ -492,7 +498,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-num">B2B/B2C</div>
-        <div class="stat-label">Ритейл · Edtech · SaaS · Аутсорсинг</div>
+        <div class="stat-label">Ритейл · E-com · SaaS</div>
       </div>
     </div>
   </div>
@@ -569,7 +575,7 @@
           </div>
           <div class="company-item">
             <div class="company-dot"></div>
-            <span class="company-name"><span style="color:var(--accent);font-weight:600;min-width:160px;display:inline-block">Аутсорсинг КЦ</span> Teleperformance / Newcontact</span>
+            <span class="company-name"><span style="color:var(--accent);font-weight:600;min-width:160px;display:inline-block">Аутсорсинг КЦ</span> Teleperformance<br>Newcontact</span>
           </div>
           <div class="company-item">
             <div class="company-dot"></div>
@@ -696,7 +702,7 @@
           <span class="metric-value">+15%</span>
         </div>
         <div class="metric-row">
-          <span class="metric-name">Retention Rate (ACCA, +7% к плану)</span>
+          <span class="metric-name">Retention Rate (ACCA)</span>
           <span class="metric-value">+7%</span>
         </div>
         <div class="metric-row">
